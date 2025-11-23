@@ -1,0 +1,93 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "DAPlink Debug",
+            "type": "cortex-debug",
+            "request": "launch",
+            "executable": "${command:cmake.buildDirectory}/gxnu_hushi_ec.elf",
+            "device": "STM32F407IGHx",
+            "servertype": "openocd",
+            "svdFile": "STM32F407.svd",
+            "configFiles": [
+                "openocd_dap.cfg"
+            ],
+            "runToEntryPoint": "main",
+            "rtos": "FreeRTOS",
+            "preLaunchTask": "CMake Build",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            },
+            "rttConfig": {
+                "enabled": true,
+                "address": "auto",
+                "decoders": [
+                    {
+                        "label": "",
+                        "port": 0,
+                        "type": "console"
+                    }
+                ]
+            },
+        },
+        {
+            "name": "Jlink Debug",
+            "type": "cortex-debug",
+            "request": "launch",
+            "executable": "${command:cmake.buildDirectory}/gxnu_hushi_ec.elf",
+            "device": "STM32F407IGHx",
+            "servertype": "jlink",
+            "svdFile": "STM32F407.svd",
+            "runToEntryPoint": "main",
+            "interface": "swd",
+            "rtos": "FreeRTOS",
+            "preLaunchTask": "CMake Build",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            },
+            "rttConfig": {
+                "enabled": true,
+                "address": "auto",
+                "decoders": [
+                    {
+                        "label": "",
+                        "port": 0,
+                        "type": "console"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "STlink Debug",
+            "type": "cortex-debug",
+            "request": "launch",
+            "executable": "${command:cmake.buildDirectory}/gxnu_hushi_ec.elf",
+            "device": "STM32F407IGHx",
+            "servertype": "openocd",
+            "svdFile": "STM32F407.svd",
+            "configFiles": [
+                "openocd_stlink.cfg"
+            ],
+            "runToEntryPoint": "main",
+            "rtos": "FreeRTOS",
+            "preLaunchTask": "CMake Build",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            },
+            "rttConfig": {
+                "enabled": true,
+                "address": "auto",
+                "decoders": [
+                    {
+                        "label": "",
+                        "port": 0,
+                        "type": "console"
+                    }
+                ]
+            },
+        },
+    ]
+}
