@@ -7,7 +7,7 @@
 #include "bsp/log/log.hpp"
 #include "bsp/system/time.hpp"
 
-#include "gimbal/gimbal.hpp"=
+#include "gimbal/gimbal.hpp"
 #include "modules/imu/ins_task.h"
 #include "modules/motor/motor.hpp"
 #include <memory>

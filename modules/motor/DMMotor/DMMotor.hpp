@@ -83,4 +83,13 @@ private:
     inline static std::vector<DMMotor*> registered_motors_;  ///< 注册的DMMotor实例
 
     void setMITControlPacket(float position_des, float velocity_des, float torque_des, uint16_t kp, uint16_t kd);
+
+    ///set_target_angle 接口///
+    void set_target_angle(float target_angle) {
+        this->setRef(target_angle);  // 复用IMotor的setRef方法
+    }
+    float get_current_angle() const {
+        return this->measure_.total_angle;  // 读取编码器累计角度
+    }
+
 };

@@ -26,6 +26,9 @@ enum class MotorType : uint8_t
     GM6020,
     M3508,
     M2006,
+    J8009,//添加电机
+    J4310,
+
 };
 enum class FeedbackType : uint8_t
 {
